@@ -3,7 +3,7 @@
 
 GenericCache allows you to interface with cache via either one write/read connection (pool) or two separate write and read connections (pools).  Once initialized the GenericCache will just do the right thing when interacting with the pools, based on what you're trying to do.
 
-GenericCache (implements Jim-Lambert-Bose/cache interface) which makes it compatible with persistent caches included in [gin-contrib/cache](https://github.com/gin-contrib/cache).   Also, a GenericCache can also be used to cache results from a Gin application.
+GenericCache (implements aninterface) which makes it compatible with persistent caches included in [gin-contrib/cache](https://github.com/gin-contrib/cache).   Also, a GenericCache can also be used to cache results from a Gin application.
  
 
 The current list of persistent caches from gin-contrib includes:
