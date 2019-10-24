@@ -301,7 +301,7 @@ func InitRedisCache(
 			storeDNS = "localhost:6379"
 		}
 		logger.Infof("InitCache: using cache at: %s", storeDNS)
-		cache = persistence.NewRedisCache(storeDNS, string(redisPassword), storeExp)
+		cache = persistence.NewRedisCache(storeDNS, string(redisPassword), storeExp, persistence.WithSelectDatabase(selectDatabase))
 		var v string
 		var err error
 		if v, err = testCache(cache, "testing", "1,2,3..", storeExp); err != nil {
