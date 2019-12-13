@@ -8,6 +8,11 @@ import (
 )
 
 func TestRedisConnectionInfo_New(t *testing.T) {
+	r, err := initTestRedis(t)
+	if err != nil {
+		t.Fatal("Unable to init test redis: ", err)
+	}
+	defer r.Close()
 	requestLogger := log.WithFields(log.Fields{"hi-mom": "yo!"})
 	defExpSeconds := 10
 	selectDatabase := 3
