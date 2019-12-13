@@ -1,19 +1,27 @@
+# github.com/Bose/minisentinel v0.0.0-20191213132324-b7726ed8ed71
+github.com/Bose/minisentinel
 # github.com/FZambia/sentinel v1.1.0
 github.com/FZambia/sentinel
-# github.com/Jim-Lambert-Bose/cache v1.0.2
+# github.com/Jim-Lambert-Bose/cache v1.0.3
 github.com/Jim-Lambert-Bose/cache/persistence
 github.com/Jim-Lambert-Bose/cache/utils
+# github.com/alicebob/gopher-json v0.0.0-20180125190556-5a6b3ba71ee6
+github.com/alicebob/gopher-json
+# github.com/alicebob/miniredis/v2 v2.11.0
+github.com/alicebob/miniredis/v2
+github.com/alicebob/miniredis/v2/geohash
+github.com/alicebob/miniredis/v2/server
 # github.com/beorn7/perks v1.0.1
 github.com/beorn7/perks/quantile
-# github.com/bradfitz/gomemcache v0.0.0-20180710155616-bc664df96737
+# github.com/bradfitz/gomemcache v0.0.0-20190329173943-551aad21a668
 github.com/bradfitz/gomemcache/memcache
 # github.com/ericchiang/k8s v1.2.0
 github.com/ericchiang/k8s
 github.com/ericchiang/k8s/apis/meta/v1
 github.com/ericchiang/k8s/runtime
-github.com/ericchiang/k8s/watch/versioned
 github.com/ericchiang/k8s/runtime/schema
 github.com/ericchiang/k8s/util/intstr
+github.com/ericchiang/k8s/watch/versioned
 # github.com/gin-contrib/sse v0.0.0-20190301062529-5545eab6dad3
 github.com/gin-contrib/sse
 # github.com/gin-gonic/gin v1.4.0
@@ -24,8 +32,8 @@ github.com/gin-gonic/gin/render
 # github.com/golang/protobuf v1.3.2
 github.com/golang/protobuf/proto
 # github.com/gomodule/redigo v2.0.0+incompatible
-github.com/gomodule/redigo/redis
 github.com/gomodule/redigo/internal
+github.com/gomodule/redigo/redis
 # github.com/google/uuid v1.1.1
 github.com/google/uuid
 # github.com/hashicorp/golang-lru v0.5.3
@@ -33,7 +41,7 @@ github.com/hashicorp/golang-lru
 github.com/hashicorp/golang-lru/simplelru
 # github.com/json-iterator/go v1.1.7
 github.com/json-iterator/go
-# github.com/konsorten/go-windows-terminal-sequences v1.0.1
+# github.com/konsorten/go-windows-terminal-sequences v1.0.2
 github.com/konsorten/go-windows-terminal-sequences
 # github.com/mattn/go-isatty v0.0.7
 github.com/mattn/go-isatty
@@ -57,8 +65,8 @@ github.com/prometheus/client_golang/prometheus/promhttp
 github.com/prometheus/client_model/go
 # github.com/prometheus/common v0.6.0
 github.com/prometheus/common/expfmt
-github.com/prometheus/common/model
 github.com/prometheus/common/internal/bitbucket.org/ww/goautoneg
+github.com/prometheus/common/model
 # github.com/prometheus/procfs v0.0.3
 github.com/prometheus/procfs
 github.com/prometheus/procfs/internal/fs
@@ -66,23 +74,28 @@ github.com/prometheus/procfs/internal/fs
 github.com/robfig/go-cache
 # github.com/sirupsen/logrus v1.4.2
 github.com/sirupsen/logrus
-# github.com/ugorji/go v1.1.4
+# github.com/ugorji/go/codec v1.1.7
 github.com/ugorji/go/codec
+# github.com/yuin/gopher-lua v0.0.0-20191213034115-f46add6fdb5c
+github.com/yuin/gopher-lua
+github.com/yuin/gopher-lua/ast
+github.com/yuin/gopher-lua/parse
+github.com/yuin/gopher-lua/pm
 # github.com/zsais/go-gin-prometheus v0.1.0
 github.com/zsais/go-gin-prometheus
-# golang.org/x/net v0.0.0-20190613194153-d28f0bde5980
-golang.org/x/net/http2
+# golang.org/x/net v0.0.0-20190827160401-ba9fcec4b297
 golang.org/x/net/http/httpguts
+golang.org/x/net/http2
 golang.org/x/net/http2/hpack
 golang.org/x/net/idna
 # golang.org/x/sys v0.0.0-20190801041406-cbf593c0f2f3
-golang.org/x/sys/windows
 golang.org/x/sys/unix
+golang.org/x/sys/windows
 # golang.org/x/text v0.3.0
 golang.org/x/text/secure/bidirule
+golang.org/x/text/transform
 golang.org/x/text/unicode/bidi
 golang.org/x/text/unicode/norm
-golang.org/x/text/transform
 # gopkg.in/go-playground/validator.v8 v8.18.2
 gopkg.in/go-playground/validator.v8
 # gopkg.in/yaml.v2 v2.2.2

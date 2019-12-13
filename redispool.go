@@ -52,12 +52,12 @@ func NewSentinelPool(
 	if masterIdentifier == nil {
 		masterIdentifier = []byte("mymaster")
 	}
+	connTimeout := time.Duration(connectionTimeoutMilliseconds) * time.Millisecond
+	readWriteTimeout := time.Duration(readWriteTimeoutMilliseconds) * time.Millisecond
 	sntnl := &sentinel.Sentinel{
 		Addrs:      sentinelAddrs,
 		MasterName: string(masterIdentifier),
 		Dial: func(addr string) (redis.Conn, error) {
-			connTimeout := time.Duration(connectionTimeoutMilliseconds) * time.Millisecond
-			readWriteTimeout := time.Duration(readWriteTimeoutMilliseconds) * time.Millisecond
 			c, err := redis.DialTimeout(network, addr, connTimeout, readWriteTimeout, readWriteTimeout)
 			if err != nil {
 				return nil, err
@@ -78,7 +78,7 @@ func NewSentinelPool(
 			}
 			// logger.Debugf("NewSentinelPool: using master addr %s", redisHostAddr)
 			// logger.Debugf("NewSentinelPool: using addr %s", redisHostAddr)
-			c, err := redis.Dial("tcp", redisHostAddr)
+			c, err := redis.DialTimeout(network, redisHostAddr, connTimeout, readWriteTimeout, readWriteTimeout)
 			if err != nil {
 				return nil, err
 			}
@@ -374,14 +374,14 @@ func InitReadOnlyRedisCache(
 	if readWriteTimeoutMilliseconds <= 0 {
 		readWriteTimeoutMilliseconds = defReadWriteTimeoutMilliseconds // set a reasonable default
 	}
+	connTimeout := time.Duration(connectionTimeoutMilliseconds) * time.Millisecond
+	readWriteTimeout := time.Duration(readWriteTimeoutMilliseconds) * time.Millisecond
 	pool := &redis.Pool{
 		MaxIdle:     maxConnections,
 		MaxActive:   maxConnections,
 		IdleTimeout: 240 * time.Second,
 		Dial: func() (redis.Conn, error) {
 			logger.Debugf("InitReadOnlyRedisCache: using addr %s", realURL.Host)
-			connTimeout := time.Duration(connectionTimeoutMilliseconds) * time.Millisecond
-			readWriteTimeout := time.Duration(readWriteTimeoutMilliseconds) * time.Millisecond
 			c, err := redis.DialTimeout(network, realURL.Host, connTimeout, readWriteTimeout, readWriteTimeout)
 			if err != nil {
 				return nil, err

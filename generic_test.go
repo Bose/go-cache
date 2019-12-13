@@ -169,6 +169,12 @@ var newExpiryLRUInMemoryStore = func(t *testing.T, defaultExpiration time.Durati
 }
 
 func TestGenericCache_TypicalGetSet(t *testing.T) {
+	r, err := initTestRedis(t)
+	if err != nil {
+		t.Fatal("Unable to init test redis: ", err)
+	}
+	defer r.Close()
+
 	typicalGetSet(t, newGenericStoreRedis)
 	typicalGetSet(t, newGenericStoreInMemory)
 	typicalGetSet(t, newGenericStoreRedisEncrypted)
@@ -179,28 +185,63 @@ func TestGenericCache_TypicalGetSet(t *testing.T) {
 }
 
 func TestRedisCache_IncrDecr(t *testing.T) {
+	r, err := initTestRedis(t)
+	if err != nil {
+		t.Fatal("Unable to init test redis: ", err)
+	}
+	defer r.Close()
 	incrDecr(t, newGenericStoreRedis)
 	incrDecr(t, newGenericStoreInMemory)
 	incrDecr(t, newGenericStoreRedisEncrypted)
 	incrDecr(t, newExpiryLRUInMemoryStore)
 }
 func TestRedisCache_IncrAtomic(t *testing.T) {
+	r, err := initTestRedis(t)
+	if err != nil {
+		t.Fatal("Unable to init test redis: ", err)
+	}
+	defer r.Close()
 	incrRedisAtomicAndExpireAt(t, newGenericCache)
 }
 func TestRedisCache_Expiration(t *testing.T) {
+	r, err := initTestRedis(t)
+	if err != nil {
+		t.Fatal("Unable to init test redis: ", err)
+	}
+	defer r.Close()
 	expiration(t, newGenericStoreRedis)
 }
 func TestRedisCache_ExpirationEncrypted(t *testing.T) {
+	r, err := initTestRedis(t)
+	if err != nil {
+		t.Fatal("Unable to init test redis: ", err)
+	}
+	defer r.Close()
 	expiration(t, newGenericStoreRedisEncrypted)
 }
 func Test_ExpirationInMemStore(t *testing.T) {
+	r, err := initTestRedis(t)
+	if err != nil {
+		t.Fatal("Unable to init test redis: ", err)
+	}
+	defer r.Close()
 	expiration(t, newGenericStoreInMemory)
 }
 
 func Test_ExpirationLRU(t *testing.T) {
+	r, err := initTestRedis(t)
+	if err != nil {
+		t.Fatal("Unable to init test redis: ", err)
+	}
+	defer r.Close()
 	expiration(t, newExpiryLRUInMemoryStore)
 }
 func TestRedisCache_EmptyCache(t *testing.T) {
+	r, err := initTestRedis(t)
+	if err != nil {
+		t.Fatal("Unable to init test redis: ", err)
+	}
+	defer r.Close()
 	emptyCache(t, newGenericStoreRedis)
 	emptyCache(t, newGenericStoreInMemory)
 	emptyCache(t, newGenericStoreRedisEncrypted)
@@ -208,16 +249,31 @@ func TestRedisCache_EmptyCache(t *testing.T) {
 }
 
 func TestRedisCache_Replace(t *testing.T) {
+	r, err := initTestRedis(t)
+	if err != nil {
+		t.Fatal("Unable to init test redis: ", err)
+	}
+	defer r.Close()
 	testReplace(t, newGenericStoreRedis)
 	testReplace(t, newGenericStoreInMemory)
 	testReplace(t, newExpiryLRUInMemoryStore)
 }
 
 func TestRedisCache_Add(t *testing.T) {
+	r, err := initTestRedis(t)
+	if err != nil {
+		t.Fatal("Unable to init test redis: ", err)
+	}
+	defer r.Close()
 	testAdd(t, newGenericStoreRedis)
 	testAdd(t, newGenericStoreInMemory)
 }
 
 func TestRedis_RedisGetExpiresIn(t *testing.T) {
+	r, err := initTestRedis(t)
+	if err != nil {
+		t.Fatal("Unable to init test redis: ", err)
+	}
+	defer r.Close()
 	testRedisGetExpiresIn(t, newGenericCache)
 }
