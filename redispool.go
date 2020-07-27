@@ -133,7 +133,7 @@ func inCluster(logger *logrus.Entry) bool {
 		logger.Infof("unable to create k8s config: %s", err)
 		return false
 	}
-	_, err := kubernetes.NewForConfig(config)
+	_, err = kubernetes.NewForConfig(config)
 	if err != nil {
 		logger.Infof("unable to create k8s clientset: %s", err)
 		return false

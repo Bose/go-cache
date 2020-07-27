@@ -1,7 +1,6 @@
 // Copyright 2013 The Go Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
-
 package yaml
 
 import (
@@ -46,11 +45,7 @@ func indirect(v reflect.Value, decodingNull bool) (json.Unmarshaler, encoding.Te
 			break
 		}
 		if v.IsNil() {
-			if v.CanSet() {
-				v.Set(reflect.New(v.Type().Elem()))
-			} else {
-				v = reflect.New(v.Type().Elem())
-			}
+			v.Set(reflect.New(v.Type().Elem()))
 		}
 		if v.Type().NumMethod() > 0 {
 			if u, ok := v.Interface().(json.Unmarshaler); ok {
