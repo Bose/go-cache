@@ -11,6 +11,8 @@ import (
 	"github.com/Jim-Lambert-Bose/cache/persistence"
 	"github.com/gomodule/redigo/redis"
 	"github.com/sirupsen/logrus"
+	"k8s.io/client-go/kubernetes"
+	"k8s.io/client-go/rest"
 )
 
 // Type - define the type of cache: read or write
@@ -125,7 +127,18 @@ func inCluster(logger *logrus.Entry) bool {
 	// }
 	// logger.Infof("inCluster: true")
 	// return true
-	return false
+
+	config, err := rest.InClusterConfig()
+	if err != nil {
+		logger.Infof("unable to create k8s config: %s", err)
+		return false
+	}
+	_, err := kubernetes.NewForConfig(config)
+	if err != nil {
+		logger.Infof("unable to create k8s clientset: %s", err)
+		return false
+	}
+	return true
 }
 
 // RedisConnectionInfo - define all the things needed to manage a connection to redis (optionally using sentinel)
