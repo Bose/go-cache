@@ -9,7 +9,6 @@ import (
 
 	sentinel "github.com/FZambia/sentinel"
 	"github.com/Jim-Lambert-Bose/cache/persistence"
-	"github.com/ericchiang/k8s"
 	"github.com/gomodule/redigo/redis"
 	"github.com/sirupsen/logrus"
 )
@@ -112,20 +111,21 @@ func NewSentinelPool(
 
 // inCluster - are we executing in the K8s cluster
 func inCluster(logger *logrus.Entry) bool {
-	// globals.InCluster = true
-	// return
-	namespace := os.Getenv("MY_POD_NAMESPACE")
-	logger.Infof("inCluster: env == %s", namespace)
-	// defer recoverInCluster() // maybe it won't panic, so we don't need this
-	_, err := k8s.NewInClusterClient()
-	// standard service account has no privs to list pods!!!
-	// so we're done
-	if err != nil {
-		logger.Infof("inCluster: false")
-		return false
-	}
-	logger.Infof("inCluster: true")
-	return true
+	// // globals.InCluster = true
+	// // return
+	// namespace := os.Getenv("MY_POD_NAMESPACE")
+	// logger.Infof("inCluster: env == %s", namespace)
+	// // defer recoverInCluster() // maybe it won't panic, so we don't need this
+	// _, err := k8s.NewInClusterClient()
+	// // standard service account has no privs to list pods!!!
+	// // so we're done
+	// if err != nil {
+	// 	logger.Infof("inCluster: false")
+	// 	return false
+	// }
+	// logger.Infof("inCluster: true")
+	// return true
+	return false
 }
 
 // RedisConnectionInfo - define all the things needed to manage a connection to redis (optionally using sentinel)

@@ -7,7 +7,6 @@ require (
 	github.com/FZambia/sentinel v1.1.0
 	github.com/Jim-Lambert-Bose/cache v1.0.3
 	github.com/alicebob/miniredis/v2 v2.11.0
-	github.com/ericchiang/k8s v1.2.0
 	github.com/gin-gonic/gin v1.4.0
 	github.com/gomodule/redigo v2.0.0+incompatible
 	github.com/google/uuid v1.1.1
