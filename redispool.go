@@ -11,7 +11,6 @@ import (
 	"github.com/Jim-Lambert-Bose/cache/persistence"
 	"github.com/gomodule/redigo/redis"
 	"github.com/sirupsen/logrus"
-	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"
 )
 
@@ -114,14 +113,9 @@ func NewSentinelPool(
 // inCluster - are we executing in the K8s cluster
 func inCluster(logger *logrus.Entry) bool {
 	// Try to create an in-cluster k8s client
-	config, err := rest.InClusterConfig()
+	_, err := rest.InClusterConfig()
 	if err != nil {
-		logger.Infof("unable to create k8s config: %s", err)
-		return false
-	}
-	_, err = kubernetes.NewForConfig(config)
-	if err != nil {
-		logger.Infof("unable to create k8s clientset: %s", err)
+		logger.Infof("unable to create k8s config, assuming outside of cluster: %s", err)
 		return false
 	}
 	return true
