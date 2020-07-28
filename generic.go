@@ -496,6 +496,7 @@ func (c *GenericCache) Get(key string, value interface{}) error {
 		if err != nil {
 			if err.Error() != persistence.ErrCacheMiss.Error() {
 				c.logError(fmt.Sprintf("GenericCache.Get: L%v/T%v error == %s", c.cLevel, c.cType, err.Error()))
+				return err
 			}
 			return persistence.ErrCacheMiss
 		}
