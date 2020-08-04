@@ -9,9 +9,9 @@ import (
 
 	sentinel "github.com/FZambia/sentinel"
 	"github.com/Jim-Lambert-Bose/cache/persistence"
-	"github.com/ericchiang/k8s"
 	"github.com/gomodule/redigo/redis"
 	"github.com/sirupsen/logrus"
+	"k8s.io/client-go/rest"
 )
 
 // Type - define the type of cache: read or write
@@ -112,19 +112,12 @@ func NewSentinelPool(
 
 // inCluster - are we executing in the K8s cluster
 func inCluster(logger *logrus.Entry) bool {
-	// globals.InCluster = true
-	// return
-	namespace := os.Getenv("MY_POD_NAMESPACE")
-	logger.Infof("inCluster: env == %s", namespace)
-	// defer recoverInCluster() // maybe it won't panic, so we don't need this
-	_, err := k8s.NewInClusterClient()
-	// standard service account has no privs to list pods!!!
-	// so we're done
+	// Try to create an in-cluster k8s client
+	_, err := rest.InClusterConfig()
 	if err != nil {
-		logger.Infof("inCluster: false")
+		logger.Infof("unable to create k8s config, assuming outside of cluster: %s", err)
 		return false
 	}
-	logger.Infof("inCluster: true")
 	return true
 }
 
