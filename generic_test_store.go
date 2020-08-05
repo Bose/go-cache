@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Jim-Lambert-Bose/cache/persistence"
+	"github.com/BoseCorp/cache/persistence"
 )
 
 type cacheFactory func(*testing.T, time.Duration) persistence.CacheStore

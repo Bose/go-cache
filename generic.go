@@ -13,7 +13,7 @@ import (
 	"time"
 
 	"github.com/Bose/go-cache/galapagos_gin/cache"
-	"github.com/Jim-Lambert-Bose/cache/persistence"
+	"github.com/BoseCorp/cache/persistence"
 	"github.com/sirupsen/logrus"
 )
 

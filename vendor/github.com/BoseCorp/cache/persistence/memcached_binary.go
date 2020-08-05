@@ -3,7 +3,7 @@ package persistence
 import (
 	"time"
 
-	"github.com/Jim-Lambert-Bose/cache/utils"
+	"github.com/BoseCorp/cache/utils"
 	// "github.com/gin-contrib/cache/utils"
 	"github.com/memcachier/mc"
 )

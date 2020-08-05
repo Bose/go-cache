@@ -20,7 +20,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/Jim-Lambert-Bose/cache/persistence"
+	"github.com/BoseCorp/cache/persistence"
 	"github.com/gin-gonic/gin"
 	opentracing "github.com/opentracing/opentracing-go"
 	"github.com/opentracing/opentracing-go/ext"
