@@ -12,8 +12,8 @@ import (
 	"os"
 	"time"
 
+	"github.com/Bose/cache/persistence"
 	"github.com/Bose/go-cache/galapagos_gin/cache"
-	"github.com/BoseCorp/cache/persistence"
 	"github.com/sirupsen/logrus"
 )
 

@@ -1,7 +1,7 @@
+github.com/Bose/cache v1.0.4-0.20200812194832-2a9e50900993 h1:q6HEewmyWN5o8/rkKp1oDkp69EGwxG+Z2HtxUJcWRI8=
+github.com/Bose/cache v1.0.4-0.20200812194832-2a9e50900993/go.mod h1:3UNhcf3GsYwUZ/citFO7hLJ3wVodP/RNeqh/ZV+TMfA=
 github.com/Bose/minisentinel v0.0.0-20191213132324-b7726ed8ed71 h1:J52um+Sp3v8TpSY0wOgpjr84np+xvrY3503DRirJ6wI=
 github.com/Bose/minisentinel v0.0.0-20191213132324-b7726ed8ed71/go.mod h1:E4OavwrrOME3uj3Zm9Rla8ZDqlAR5GqKA+mMIPoilYk=
-github.com/BoseCorp/cache v1.0.4 h1:rxH9VLbVWgvRawKu0JQxKvs466cv7rvYp13B25aV7E0=
-github.com/BoseCorp/cache v1.0.4/go.mod h1:p6oRnDai34pPtOb4vkSGhygNtzX6tdlNh2uJ0wX0W1E=
 github.com/FZambia/sentinel v1.0.0/go.mod h1:ytL1Am/RLlAoAXG6Kj5LNuw/TRRQrv2rt2FT26vP5gI=
 github.com/FZambia/sentinel v1.1.0 h1:qrCBfxc8SvJihYNjBWgwUI93ZCvFe/PJIPTHKmlp8a8=
 github.com/FZambia/sentinel v1.1.0/go.mod h1:ytL1Am/RLlAoAXG6Kj5LNuw/TRRQrv2rt2FT26vP5gI=

@@ -1,8 +1,8 @@
+# github.com/Bose/cache v1.0.4-0.20200812194832-2a9e50900993
+github.com/Bose/cache/persistence
+github.com/Bose/cache/utils
 # github.com/Bose/minisentinel v0.0.0-20191213132324-b7726ed8ed71
 github.com/Bose/minisentinel
-# github.com/BoseCorp/cache v1.0.4
-github.com/BoseCorp/cache/persistence
-github.com/BoseCorp/cache/utils
 # github.com/FZambia/sentinel v1.1.0
 github.com/FZambia/sentinel
 # github.com/alicebob/gopher-json v0.0.0-20180125190556-5a6b3ba71ee6

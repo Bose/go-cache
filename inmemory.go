@@ -6,7 +6,7 @@ import (
 	"time"
 
 	"github.com/Bose/go-cache/galapagos_gin/cache"
-	"github.com/BoseCorp/cache/persistence"
+	"github.com/Bose/cache/persistence"
 	lru "github.com/hashicorp/golang-lru"
 )
 

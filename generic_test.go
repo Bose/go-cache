@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/BoseCorp/cache/persistence"
+	"github.com/Bose/cache/persistence"
 	"github.com/sirupsen/logrus"
 )
 

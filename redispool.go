@@ -8,7 +8,7 @@ import (
 	"time"
 
 	sentinel "github.com/FZambia/sentinel"
-	"github.com/BoseCorp/cache/persistence"
+	"github.com/Bose/cache/persistence"
 	"github.com/ericchiang/k8s"
 	"github.com/gomodule/redigo/redis"
 	"github.com/sirupsen/logrus"
