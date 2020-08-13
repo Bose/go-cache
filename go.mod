@@ -3,9 +3,9 @@ module github.com/Bose/go-cache
 go 1.12
 
 require (
+	github.com/Bose/cache v1.0.4-0.20200812194832-2a9e50900993
 	github.com/Bose/minisentinel v0.0.0-20191213132324-b7726ed8ed71
 	github.com/FZambia/sentinel v1.1.0
-	github.com/Jim-Lambert-Bose/cache v1.0.3
 	github.com/alicebob/miniredis/v2 v2.11.0
 	github.com/ericchiang/k8s v1.2.0
 	github.com/gin-gonic/gin v1.4.0

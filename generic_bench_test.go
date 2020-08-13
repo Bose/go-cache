@@ -8,7 +8,7 @@ import (
 
 	"github.com/google/uuid"
 
-	"github.com/Jim-Lambert-Bose/cache/persistence"
+	"github.com/Bose/cache/persistence"
 	"github.com/sirupsen/logrus"
 )
 

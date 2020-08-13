@@ -1,10 +1,10 @@
+github.com/Bose/cache v1.0.4-0.20200812194832-2a9e50900993 h1:q6HEewmyWN5o8/rkKp1oDkp69EGwxG+Z2HtxUJcWRI8=
+github.com/Bose/cache v1.0.4-0.20200812194832-2a9e50900993/go.mod h1:3UNhcf3GsYwUZ/citFO7hLJ3wVodP/RNeqh/ZV+TMfA=
 github.com/Bose/minisentinel v0.0.0-20191213132324-b7726ed8ed71 h1:J52um+Sp3v8TpSY0wOgpjr84np+xvrY3503DRirJ6wI=
 github.com/Bose/minisentinel v0.0.0-20191213132324-b7726ed8ed71/go.mod h1:E4OavwrrOME3uj3Zm9Rla8ZDqlAR5GqKA+mMIPoilYk=
 github.com/FZambia/sentinel v1.0.0/go.mod h1:ytL1Am/RLlAoAXG6Kj5LNuw/TRRQrv2rt2FT26vP5gI=
 github.com/FZambia/sentinel v1.1.0 h1:qrCBfxc8SvJihYNjBWgwUI93ZCvFe/PJIPTHKmlp8a8=
 github.com/FZambia/sentinel v1.1.0/go.mod h1:ytL1Am/RLlAoAXG6Kj5LNuw/TRRQrv2rt2FT26vP5gI=
-github.com/Jim-Lambert-Bose/cache v1.0.3 h1:kgkWQcKRtswM08CStWuucbLbjeK8TmaWBTr/S2Ei/x4=
-github.com/Jim-Lambert-Bose/cache v1.0.3/go.mod h1:rZHUsMi0xjPwopKMTEGC3HfmnrMvqPsIPvaQ70bDzps=
 github.com/alecthomas/template v0.0.0-20160405071501-a0175ee3bccc/go.mod h1:LOuyumcjzFXgccqObfd/Ljyb9UuFJ6TxHnclSeseNhc=
 github.com/alecthomas/units v0.0.0-20151022065526-2efee857e7cf/go.mod h1:ybxpYRFXyAe+OPACYpWeL0wqObRcbAqCMya13uyzqw0=
 github.com/alicebob/gopher-json v0.0.0-20180125190556-5a6b3ba71ee6 h1:45bxf7AZMwWcqkLzDAQugVEwedisr5nRJ1r+7LYnv0U=

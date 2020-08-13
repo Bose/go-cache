@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Jim-Lambert-Bose/cache/persistence"
+	"github.com/Bose/cache/persistence"
 )
 
 const (

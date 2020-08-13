@@ -9,7 +9,7 @@ import (
 	ginCache "github.com/Bose/go-cache/galapagos_gin/cache"
 	ginprometheus "github.com/zsais/go-gin-prometheus"
 
-	"github.com/Jim-Lambert-Bose/cache/persistence"
+	"github.com/Bose/cache/persistence"
 	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
 )

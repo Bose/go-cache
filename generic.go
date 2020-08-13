@@ -12,8 +12,8 @@ import (
 	"os"
 	"time"
 
+	"github.com/Bose/cache/persistence"
 	"github.com/Bose/go-cache/galapagos_gin/cache"
-	"github.com/Jim-Lambert-Bose/cache/persistence"
 	"github.com/sirupsen/logrus"
 )
 
@@ -266,8 +266,11 @@ func (c *GenericCache) Delete(key string) (err error) {
 	}
 	c.logDebug(fmt.Sprintf("GenericCache.Delete: L%v/T%v key == %s", c.cLevel, c.cType, key))
 	if err := c.Cache.(persistence.CacheStore).Delete(key); err != nil {
-		c.logError(fmt.Sprintf("GenericCache.Delete: L%v/T%v error == %s", c.cLevel, c.cType, err.Error()))
-		return err
+		if err.Error() != persistence.ErrCacheMiss.Error() {
+			c.logError(fmt.Sprintf("GenericCache.Delete: L%v/T%v error == %s", c.cLevel, c.cType, err.Error()))
+			return err
+		}
+		return persistence.ErrCacheMiss
 	}
 	return nil
 }
@@ -507,6 +510,7 @@ func (c *GenericCache) Get(key string, value interface{}) error {
 		if err != nil {
 			if err.Error() != persistence.ErrCacheMiss.Error() {
 				c.logError(fmt.Sprintf("GenericCache.Get: L%v/T%v error == %s", c.cLevel, c.cType, err.Error()))
+				return err
 			}
 			return persistence.ErrCacheMiss
 		}
@@ -531,6 +535,7 @@ func (c *GenericCache) Get(key string, value interface{}) error {
 		if err != nil {
 			if err.Error() != persistence.ErrCacheMiss.Error() {
 				c.logError(fmt.Sprintf("GenericCache.Get: L%v/T%v error == %s", c.cLevel, c.cType, err.Error()))
+				return err
 			}
 			return persistence.ErrCacheMiss
 		}
@@ -540,6 +545,7 @@ func (c *GenericCache) Get(key string, value interface{}) error {
 		if err != nil {
 			if err.Error() != persistence.ErrCacheMiss.Error() {
 				c.logError(fmt.Sprintf("GenericCache.Get: L%v/T%v error == %s", c.cLevel, c.cType, err.Error()))
+				return err
 			}
 			return persistence.ErrCacheMiss
 		}
@@ -549,6 +555,7 @@ func (c *GenericCache) Get(key string, value interface{}) error {
 		if err != nil {
 			if err.Error() != persistence.ErrCacheMiss.Error() {
 				c.logError(fmt.Sprintf("GenericCache.Get: L%v/T%v error == %s", c.cLevel, c.cType, err.Error()))
+				return err
 			}
 			return persistence.ErrCacheMiss
 		}
@@ -559,6 +566,7 @@ func (c *GenericCache) Get(key string, value interface{}) error {
 		if err != nil {
 			if err.Error() != persistence.ErrCacheMiss.Error() {
 				c.logError(fmt.Sprintf("GenericCache.Get: L%v/T%v error == %s", c.cLevel, c.cType, err.Error()))
+				return err
 			}
 			return persistence.ErrCacheMiss
 		}
