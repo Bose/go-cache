@@ -1,4 +1,6 @@
-# go-cache
+# go-cache - ARCHIVED
+This public repository has been forked to BoseCorp/go-cache-lib private repository.
+
 [![](https://godoc.org/github.com/Bose/go-cache?status.svg)](https://github.com/Bose/go-cache/blob/master/godoc.md) 
 
 GenericCache allows you to interface with cache via either one write/read connection (pool) or two separate write and read connections (pools).  Once initialized the GenericCache will just do the right thing when interacting with the pools, based on what you're trying to do.
